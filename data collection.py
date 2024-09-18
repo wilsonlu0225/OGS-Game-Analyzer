@@ -63,9 +63,6 @@ def get_filtered_games_data(url):
                     print('resuming')
             
             url = data.get('next')
-            print('sleeping...')
-            time.sleep(2)
-            print('resuming')
 
         else:
             print(f'Failed to retrieve data. Status code: {response.status_code}')
@@ -87,6 +84,7 @@ store_data_to_json(filtered_games_data, 'filtered_go_games_data.json')
 
 end_time = time.time()
 elapsed_time = end_time - start_time
+elapsed_minutes = elapsed_time / 60
 
 print(f"Saved {len(filtered_games_data)} games to 'filtered_go_games_data.json'.")
-print(f"Process took {elapsed_time:.2f / 60} minutes.")
+print(f"Process took {elapsed_minutes:.2f} minutes.")
