@@ -45,6 +45,14 @@ plt.xlabel('Rating Differnece')
 plt.ylabel('Win Percent')
 plt.title('Rating Difference v. Win Percent')
 
+move_count = games_df.groupby('moves').size()
+plt.figure(3)
+plt.plot(move_count.index, move_count.values)
+plt.xlabel('Games')
+plt.ylabel('Moves')
+plt.title('Moves v. Games')
+
+
 
 # plt.plot(games_df['moves'], games_df['result'])
 plt.show()
